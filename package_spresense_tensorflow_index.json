@@ -1,0 +1,163 @@
+{
+  "packages": [
+    {
+      "help": {
+        "online": "https://developer.sony.com/develop/spresense/"
+      },
+      "maintainer": "Spresense tensorflow Community",
+      "name": "SPRESENSE_tensorflow",
+      "platforms": [
+        {
+          "architecture": "spresense",
+          "archiveFileName": "spresense-v2.4.1_tensorflow.tar.gz",
+          "boards": [
+            {
+              "name": "Generic Spresense Module"
+            }
+          ],
+          "category": "SPRESENSE",
+          "checksum": "SHA-256:4cd54064112ffcd92a886c372c48b4c6b81dd4f2c7b259f31d948c5eddf91f47",
+          "help": {
+            "online": "https://developer.sony.com/develop/spresense/developer-tools/get-started-using-arduino-ide/set-up-the-arduino-ide"
+          },
+          "name": "Spresense tensorflow Board",
+          "size": 952491,
+          "toolsDependencies": [
+            {
+              "name": "spresense-sdk",
+              "packager": "SPRESENSE_tensorflow",
+              "version": "2.4.1"
+            },
+            {
+              "name": "spresense-tools",
+              "packager": "SPRESENSE_tensorflow",
+              "version": "2.4.1"
+            },
+            {
+              "name": "gcc-arm-none-eabi",
+              "packager": "SPRESENSE",
+              "version": "5.4.1"
+            }
+          ],
+          "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-v2.4.1_tensorflow.tar.gz",
+          "version": "2.4.1"
+        }
+      ],
+      "tools": [
+        {
+          "name": "gcc-arm-none-eabi",
+          "systems": [
+            {
+              "archiveFileName": "gcc-arm-none-eabi-5.4.1-windows.tar.gz",
+              "checksum": "SHA-256:23319dfa1202c11aee2594ae2fc134801d74eb8718f956d2a25f2b092cf0f32f",
+              "host": "i686-mingw32",
+              "size": "120313262",
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/gcc-arm-none-eabi-5.4.1-windows.tar.gz"
+            },
+            {
+              "_comment": "Allow x64-Linux build",
+              "archiveFileName": "gcc-arm-none-eabi-5.4.1-linux.tar.gz",
+              "checksum": "SHA-256:6ea95c393681b9ec521548f62bf2e20fef9b52501f56e0725990b24f7446d0ef",
+              "host": "x86_64-pc-linux-gnu",
+              "size": "106636817",
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/gcc-arm-none-eabi-5.4.1-linux.tar.gz"
+            },
+            {
+              "archiveFileName": "gcc-arm-none-eabi-5.4.1-macosx.tar.gz",
+              "checksum": "SHA-256:94a47fae8aa0c1380582be3f6011e5c7923c2110154ad74739367e6884eef7ec",
+              "host": "i386-apple-darwin11",
+              "size": "123352513",
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/gcc-arm-none-eabi-5.4.1-macosx.tar.gz"
+            }
+          ],
+          "version": "5.4.1"
+        },
+        {
+          "name": "gcc-arm-none-eabi",
+          "systems": [
+            {
+              "archiveFileName": "gcc-arm-none-eabi-9.2.1-windows.tar.gz",
+              "checksum": "SHA-256:22d33a4e337d44efd2c62eaaec0ca19eabeb0f314910a5a78a3289f7d4bde3ab",
+              "host": "i686-mingw32",
+              "size": "146711545",
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/gcc-arm-none-eabi-9.2.1-windows.tar.gz"
+            },
+            {
+              "_comment": "Allow x64-Linux build",
+              "archiveFileName": "gcc-arm-none-eabi-9.2.1-linux.tar.gz",
+              "checksum": "SHA-256:8a380091315485cfad759e1f8a9c7adc019a90213ee814fc9de90af49853f2f5",
+              "host": "x86_64-pc-linux-gnu",
+              "size": "148024502",
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/gcc-arm-none-eabi-9.2.1-linux.tar.gz"
+            },
+            {
+              "archiveFileName": "gcc-arm-none-eabi-9.2.1-macosx.tar.gz",
+              "checksum": "SHA-256:7d78dc50ba2163389476bdfd65cc241932f8d6376766094c48be4f3f3dd32c1b",
+              "host": "i386-apple-darwin11",
+              "size": "148926695",
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/generic/gcc-arm-none-eabi-9.2.1-macosx.tar.gz"
+            }
+          ],
+          "version": "9.2.1"
+        },
+        {
+          "name": "spresense-sdk",
+          "systems": [
+            {
+              "archiveFileName": "spresense-sdk-v2.4.1_tensorflow.tar.gz",
+              "checksum": "SHA-256:54f269c49daca0382b7d5dc5bdbf04442511b9b9be2663fdae14231fd7993667",
+              "host": "i686-mingw32",
+              "size": 23265440,
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+            },
+            {
+              "_comment": "Allow x64-Linux build",
+              "archiveFileName": "spresense-sdk-v2.4.1_tensorflow.tar.gz",
+              "checksum": "SHA-256:54f269c49daca0382b7d5dc5bdbf04442511b9b9be2663fdae14231fd7993667",
+              "host": "x86_64-pc-linux-gnu",
+              "size": 23265440,
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+            },
+            {
+              "archiveFileName": "spresense-sdk-v2.4.1_tensorflow.tar.gz",
+              "checksum": "SHA-256:54f269c49daca0382b7d5dc5bdbf04442511b9b9be2663fdae14231fd7993667",
+              "host": "i386-apple-darwin11",
+              "size": 23265440,
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+            }
+          ],
+          "version": "2.4.1"
+        },
+        {
+          "name": "spresense-tools",
+          "systems": [
+            {
+              "archiveFileName": "spresense-tools-v2.4.1_tensorflow.tar.gz",
+              "checksum": "SHA-256:7d90721932a9f4ce27ceddead0d14b8b53f9e14168e3f1c8844a7425a770e5c3",
+              "host": "i686-mingw32",
+              "size": 59772452,
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-tools-v2.4.1_tensorflow.tar.gz"
+            },
+            {
+              "_comment": "Allow x64-Linux build",
+              "archiveFileName": "spresense-tools-v2.4.1_tensorflow.tar.gz",
+              "checksum": "SHA-256:7d90721932a9f4ce27ceddead0d14b8b53f9e14168e3f1c8844a7425a770e5c3",
+              "host": "x86_64-pc-linux-gnu",
+              "size": 59772452,
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-tools-v2.4.1_tensorflow.tar.gz"
+            },
+            {
+              "archiveFileName": "spresense-tools-v2.4.1_tensorflow.tar.gz",
+              "checksum": "SHA-256:7d90721932a9f4ce27ceddead0d14b8b53f9e14168e3f1c8844a7425a770e5c3",
+              "host": "i386-apple-darwin11",
+              "size": 59772452,
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-tools-v2.4.1_tensorflow.tar.gz"
+            }
+          ],
+          "version": "2.4.1"
+        }
+      ],
+      "websiteURL": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/"
+    }
+  ]
+}
