@@ -9,16 +9,17 @@
       "platforms": [
         {
           "architecture": "spresense",
-          "archiveFileName": "spresense-v2.4.1_tensorflow.tar.gz",
+          "archiveFileName": "spresense-v2.4.0.tar.gz",
           "boards": [
             {
               "name": "Generic Spresense Module"
             }
           ],
           "category": "SPRESENSE",
-          "checksum": "SHA-256:4cd54064112ffcd92a886c372c48b4c6b81dd4f2c7b259f31d948c5eddf91f47",
+          "checksum": "SHA-256:5eeb00a48ee0ea948a4a7d510c452e2ce8ef7d73049631b42efa340b97479157",
           "help": {
             "online": "https://developer.sony.com/develop/spresense/developer-tools/get-started-using-arduino-ide/set-up-the-arduino-ide"
+
           },
           "name": "Spresense tensorflow Board",
           "size": 952491,
