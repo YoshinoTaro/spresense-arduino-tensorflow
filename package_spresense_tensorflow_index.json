@@ -39,7 +39,7 @@
               "version": "5.4.1"
             }
           ],
-          "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-v2.4.1_tensorflow.tar.gz",
+          "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/raw/main/staging/packages/spresense-v2.4.1_tensorflow.tar.gz",
           "version": "2.4.1"
         }
       ],
@@ -108,7 +108,7 @@
               "checksum": "SHA-256:54f269c49daca0382b7d5dc5bdbf04442511b9b9be2663fdae14231fd7993667",
               "host": "i686-mingw32",
               "size": 23265440,
-              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/raw/main/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
             },
             {
               "_comment": "Allow x64-Linux build",
