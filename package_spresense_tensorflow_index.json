@@ -31,7 +31,7 @@
             {
               "name": "spresense-tools",
               "packager": "SPRESENSE_tensorflow",
-              "version": "2.4.1"
+              "version": "2.4.0"
             },
             {
               "name": "gcc-arm-none-eabi",
@@ -128,33 +128,33 @@
           ],
           "version": "2.4.1"
         },
-        {
-          "name": "spresense-tools",
-          "systems": [
-            {
-              "archiveFileName": "spresense-tools-v2.4.1_tensorflow.tar.gz",
-              "checksum": "SHA-256:7d90721932a9f4ce27ceddead0d14b8b53f9e14168e3f1c8844a7425a770e5c3",
+{ 
+          "name": "spresense-tools", 
+          "systems": [ 
+            { 
+              "archiveFileName": "spresense-tools-v2.4.0.tar.gz",
+              "checksum": "SHA-256:2dd83f9e688544b57bdaa1ecb4877ff8994fef91fad91059eda769d3ef6551aa",
               "host": "i686-mingw32",
-              "size": 59772452,
-              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/raw/main/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+              "size": 59772045,
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/v2.4.0/spresense-tools-v2.4.0.tar.gz"
             },
             {
               "_comment": "Allow x64-Linux build",
-              "archiveFileName": "spresense-tools-v2.4.1_tensorflow.tar.gz",
-              "checksum": "SHA-256:7d90721932a9f4ce27ceddead0d14b8b53f9e14168e3f1c8844a7425a770e5c3",
+              "archiveFileName": "spresense-tools-v2.4.0.tar.gz",
+              "checksum": "SHA-256:2dd83f9e688544b57bdaa1ecb4877ff8994fef91fad91059eda769d3ef6551aa",
               "host": "x86_64-pc-linux-gnu",
-              "size": 59772452,
-              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/raw/main/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+              "size": 59772045,
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/v2.4.0/spresense-tools-v2.4.0.tar.gz"
             },
             {
-              "archiveFileName": "spresense-tools-v2.4.1_tensorflow.tar.gz",
-              "checksum": "SHA-256:7d90721932a9f4ce27ceddead0d14b8b53f9e14168e3f1c8844a7425a770e5c3",
+              "archiveFileName": "spresense-tools-v2.4.0.tar.gz",
+              "checksum": "SHA-256:2dd83f9e688544b57bdaa1ecb4877ff8994fef91fad91059eda769d3ef6551aa",
               "host": "i386-apple-darwin11",
-              "size": 59772452,
-              "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/raw/main/staging/packages/spresense-sdk-v2.4.1_tensorflow.tar.gz"
+              "size": 59772045,
+              "url": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/download/v2.4.0/spresense-tools-v2.4.0.tar.gz"
             }
           ],
-          "version": "2.4.1"
+          "version": "2.4.0"
         }
       ],
       "websiteURL": "https://github.com/sonydevworld/spresense-arduino-compatible/releases/"
