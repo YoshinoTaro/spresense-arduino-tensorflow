@@ -1,6 +1,6 @@
 # Spresense Arduino Package for Tensorflow
 
-How to install Spresense Arduino Package for Tensorflow.
+How to install Spresense Arduino Package for Tensorflow. Please note that this package is baseed on Spresense SDK Ver 2.4.0
 
 ## Step 1.
 Open "Preferences" on Arduino IDE, and set the below URL on "Additional Boards Manager URLs"
