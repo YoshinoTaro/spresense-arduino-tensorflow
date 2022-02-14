@@ -6,8 +6,10 @@ How to install Spresense Arduino Package for Tensorflow.
 Open "Preferences" on Arduino IDE, and set the below URL on "Additional Boards Manager URLs"
 https://raw.githubusercontent.com/YoshinoTaro/spresense-arduino-tensorflow/main/package_spresense_tensorflow_index.json
 
+<img src="https://user-images.githubusercontent.com/18510684/153807548-c0450aba-40bf-47c4-b30e-3c618f4f1f94.png" width="400" height="417"/>
+[](
 ![PreferenceOnArduinoIDE](https://user-images.githubusercontent.com/18510684/153807548-c0450aba-40bf-47c4-b30e-3c618f4f1f94.png)
-
+)
 
 ## Step 2.
 Open "Board Manager" on Arduino IDE, and install Spresense Tensorflow Board
