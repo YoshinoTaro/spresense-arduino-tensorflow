@@ -7,6 +7,8 @@
 
 #include "model.h"
 
+#define TEST_FILE "0009.bmp"
+
 tflite::ErrorReporter* error_reporter = nullptr;
 const tflite::Model* model = nullptr;
 tflite::MicroInterpreter* interpreter = nullptr;
@@ -14,24 +16,26 @@ TfLiteTensor* input = nullptr;
 TfLiteTensor* output = nullptr;
 int inference_count = 0;
 
-constexpr int kTensorArenaSize = 2000;
+constexpr int kTensorArenaSize = 20000;
 uint8_t tensor_arena[kTensorArenaSize];
 
 
-const float kXrange = 2.f * 3.14159265359f;
-const int kInferencesPerCycle = 20;
+#include <Flash.h>
+#include <BmpImage.h>
+BmpImage bmp;
+
 
 void setup() {
-  
   Serial.begin(115200);
   tflite::InitializeTarget();
-
+  memset(tensor_arena, 0, kTensorArenaSize*sizeof(uint8_t));
+  
   // Set up logging. 
   static tflite::MicroErrorReporter micro_error_reporter;
   error_reporter = &micro_error_reporter;
-
+  
   // Map the model into a usable data structure..
-  model = tflite::GetModel(g_model);
+  model = tflite::GetModel(model_tflite);
   if (model->version() != TFLITE_SCHEMA_VERSION) {
     Serial.println("Model provided is schema version " 
                   + String(model->version()) + " not equal "
@@ -41,56 +45,80 @@ void setup() {
   } else {
     Serial.println("Model version: " + String(model->version()));
   }
-
+  
   // This pulls in all the operation implementations we need.
   static tflite::AllOpsResolver resolver;
-
+  
   // Build an interpreter to run the model with.
   static tflite::MicroInterpreter static_interpreter(
       model, resolver, tensor_arena, kTensorArenaSize, error_reporter);
   interpreter = &static_interpreter;
-
+  
   // Allocate memory from the tensor_arena for the model's tensors.
   TfLiteStatus allocate_status = interpreter->AllocateTensors();
   if (allocate_status != kTfLiteOk) {
     Serial.println("AllocateTensors() failed");
     return;
+  } else {
+    Serial.println("AllocateTensor() Success");
   }
 
-  // Obtain pointers to the model's input and output tensors.
+  size_t used_size = interpreter->arena_used_bytes();
+  Serial.println("Area used bytes: " + String(used_size));
   input = interpreter->input(0);
   output = interpreter->output(0);
 
-  // Keep track of how many inferences we have performed.
-  inference_count = 0;
-}
+  Serial.println("Model input:");
+  Serial.println("dims->size: " + String(input->dims->size));
+  for (int n = 0; n < input->dims->size; ++n) {
+    Serial.println("dims->data[" + String(n) + "]: " + String(input->dims->data[n]));
+  }
 
-void loop() {
-  // Calculate an x value to feed into the model.
-  float position_x = static_cast<float>(inference_count) /
-                   static_cast<float>(kInferencesPerCycle);
-  float x = position_x * kXrange;
+  Serial.println("Model output:");
+  Serial.println("dims->size: " + String(output->dims->size));
+  for (int n = 0; n < output->dims->size; ++n) {
+    Serial.println("dims->data[" + String(n) + "]: " + String(output->dims->data[n]));
+  }
+  
+  /* read test data */
+  File myFile = Flash.open(TEST_FILE);
+  if (!myFile) { Serial.println(TEST_FILE " not found"); return; }
 
-  // Quantize the input from floating-point to integer
-  int8_t x_quantized = x / input->params.scale + input->params.zero_point;
-
-  // Place the quantized input in the model's input tensor
-  input->data.int8[0] = x_quantized;
-
-  // Run inference, and report any error
-  TfLiteStatus invoke_status = interpreter->Invoke();
-  if (invoke_status != kTfLiteOk) {
-    Serial.println("Invoke failed on x: " + String(x));
+  Serial.println("Read " TEST_FILE);
+  bmp.begin(myFile);
+  BmpImage::BMP_IMAGE_PIX_FMT fmt = bmp.getPixFormat();
+  if (fmt != BmpImage::BMP_IMAGE_GRAY8) {
+    Serial.println("support format error");
     return;
   }
 
-  // Obtain the quantized output from model's output tensor
-  int8_t y_quantized = output->data.int8[0];
-  
-  // Dequantize the output from integer to floating-point
-  float y = (y_quantized - output->params.zero_point) * output->params.scale;
-  Serial.println("y_value: " + String(y));
+  int width = bmp.getWidth();
+  int height = bmp.getHeight();
 
-  ++inference_count;
-  if (inference_count >= kInferencesPerCycle) inference_count = 0;
+  Serial.println("width:  " + String(width));
+  Serial.println("height: " + String(height));
+  uint8_t* img = bmp.getImgBuff();
+
+  for (int i = 0; i < width*height; ++i) {
+    input->data.f[i] = (float)(img[i]/255.0);
+  }
+
+  Serial.println("Do inference");
+
+  TfLiteStatus invoke_status = interpreter->Invoke();
+  if (invoke_status != kTfLiteOk) {
+    Serial.println("Invoke failed");
+    return;
+  }
+
+  for (int n = 0; n < 10; ++n) {
+    float value = output->data.f[n];
+    Serial.println("[" + String(n) + "] " + String(value)); 
+  }
+
+}
+
+
+void loop() {
+  
 }
