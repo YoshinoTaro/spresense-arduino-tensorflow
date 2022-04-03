@@ -41,7 +41,7 @@
           ],
           "url": "https://github.com/YoshinoTaro/spresense-arduino-tensorflow/raw/main/staging/packages/spresense-v2.5.1_tensorflow.tar.gz",
           "version": "2.5.1"
-        }
+        },
         {
           "architecture": "spresense",
           "archiveFileName": "spresense-v2.4.1_tensorflow.tar.gz",
@@ -218,7 +218,7 @@
             }
           ],
           "version": "2.5.1"
-        }
+        },
         {
           "name": "spresense-tools",
           "systems": [
