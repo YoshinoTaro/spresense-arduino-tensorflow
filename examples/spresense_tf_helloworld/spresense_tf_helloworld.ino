@@ -1,4 +1,4 @@
-#include <TensorFlowLite.h>
+// #include <TensorFlowLite.h>  /* comment out for SDK2.5.0 */
 #include "tensorflow/lite/micro/all_ops_resolver.h"
 #include "tensorflow/lite/micro/micro_error_reporter.h"
 #include "tensorflow/lite/micro/micro_interpreter.h"
